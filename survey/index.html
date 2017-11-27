@@ -47,6 +47,103 @@
             padding: 8px;
         }
     </style>
+
+    <!-- The following style block ONLY imitates bootstrap button classes ONLY when checked.-->
+    <style>
+        input.jscheduler-mabye-btn[type="radio"]:checked {
+            color: #111;
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+
+        input.jscheduler-mabye-btn[type="radio"]:checked:hover {
+
+            color: #111;
+            background-color: #e0a800;
+            border-color: #d39e00;
+        }
+
+        input.jscheduler-mabye-btn[type="radio"]:checked:focus,
+        input.jscheduler-mabye-btn[type="radio"]:checked.focus {
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.5);
+        }
+
+        input.jscheduler-mabye-btn[type="radio"]:checked.disabled,
+        input.jscheduler-mabye-btn[type="radio"]:checked:disabled {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+
+        input.jscheduler-mabye-btn[type="radio"]:checked:active,
+        input.jscheduler-mabye-btn[type="radio"]:checked.active,
+        .show>input.jscheduler-mabye-btn[type="radio"]:checked.dropdown-toggle {
+            background-color: #e0a800;
+            background-image: none;
+            border-color: #d39e00;
+        }
+
+        input.jscheduler-yes-btn[type="radio"]:checked {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        input.jscheduler-yes-btn[type="radio"]:checked:hover {
+            color: #fff;
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+        input.jscheduler-yes-btn[type="radio"]:checked:focus,
+        input.jscheduler-yes-btn[type="radio"]:checked.focus {
+            box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.5);
+        }
+
+        input.jscheduler-yes-btn[type="radio"]:checked.disabled,
+        input.jscheduler-yes-btn[type="radio"]:checked:disabled {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        input.jscheduler-yes-btn[type="radio"]:checked:active,
+        input.jscheduler-yes-btn[type="radio"]:checked.active,
+        .show>input.jscheduler-yes-btn[type="radio"]:checked.dropdown-toggle {
+            background-color: #218838;
+            background-image: none;
+            border-color: #1e7e34;
+        }
+
+        input.jscheduler-no-btn[type="radio"]:checked {
+            color: #fff;
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        input.jscheduler-no-btn[type="radio"]:checked:hover {
+            color: #fff;
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+        input.jscheduler-no-btn[type="radio"]:checked:focus,
+        input.jscheduler-no-btn[type="radio"]:checked.focus {
+            box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.5);
+        }
+
+        input.jscheduler-no-btn[type="radio"]:checked.disabled,
+        input.jscheduler-no-btn[type="radio"]:checked:disabled {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        input.jscheduler-no-btn[type="radio"]:checked:active,
+        input.jscheduler-no-btn[type="radio"]:checked.active,
+        .show>input.jscheduler-no-btn[type="radio"]:checked.dropdown-toggle {
+            background-color: #c82333;
+            background-image: none;
+            border-color: #bd2130;
+        }
+    </style>
     <!-- Font Awesome 5 Pro 5.0.0rc4-->
 
     <script defer src="/fonts/font-awesome/js/packs/regular.min.js">
@@ -151,36 +248,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="https://assets.jeffkmeng.com/bootstrap/4.0.0-beta/js/bootstrap.min.js">
     </script>
-    <script>
-        /* global $ */
-        //inits the code that makes a button the selected color on click for that radio.
-        function initButtonColorOnSelectFunction() {
-            var id;
-            $(".schedule-option-group").each(function(index) {
-                id = $(this).attr("data-jscheduler-id");
-                value = $(this).attr("data-jscheduler-value")
-                $(".date-radio-btn-" + id).removeClass("btn-success");
-                $(".date-radio-btn-" + id).removeClass("btn-danger");
-                $(".date-radio-btn-" + id).removeClass("btn-warning");
-                $(".date-radio-btn-" + id).addClass("btn-light");
 
-                switch (value) {
-                    case "yes":
-                        $(this).addClass("btn-success");
-                        break;
-                    case "no":
-                        $(this).addClass("btn-danger");
-                        break;
-                    case "mabye":
-                        $(this).addClass("btn-warning");
-                        break;
-                    default:
-                        console.log("Error: Value was not yes, no, or mabye.");
-                }
-            });
-        }
-        initButtonColorOnSelectFunction();
-    </script>
 </body>
 
 </html>
